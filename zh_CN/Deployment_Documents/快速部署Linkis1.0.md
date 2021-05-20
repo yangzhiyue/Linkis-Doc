@@ -4,6 +4,9 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;请注意：除了 Linkis1.0 安装包默认已经包含的：Python/Shell/Hive/Spark四个EngineConnPlugin以外，如果大家有需要，可以手动安装如 JDBC 引擎等类型的其他引擎，具体请参考 [EngineConnPlugin引擎插件安装文档](https://github.com/WeBankFinTech/Linkis/wiki/EngineConnPlugin%E5%BC%95%E6%93%8E%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3)。
 
+Linkis Docker镜像
+[Linkis 0.10.0 Docker](https://hub.docker.com/repository/docker/wedatasphere/linkis)
+
 Linkis1.0 默认已适配的引擎列表如下：
 
 | 引擎类型 | 适配情况 | 官方安装包是否包含 |
