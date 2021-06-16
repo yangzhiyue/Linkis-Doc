@@ -102,7 +102,7 @@ Linkis1.0 默认已适配的引擎列表如下：
     export HIVE_CONF_DIR=/appcom/config/hive-config
     #Spark
     export SPARK_HOME=/appcom/Install/spark
-    export SPARK_CONF_DIR=/appcom/config/spark-config/spark-submit
+    export SPARK_CONF_DIR=/appcom/config/spark-config/
     export PYSPARK_ALLOW_INSECURE_GATEWAY=1  # Pyspark必须加的参数
 ```
 
@@ -119,13 +119,13 @@ Linkis1.0 默认已适配的引擎列表如下：
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;先解压安装包到安装目录，并对解压后的文件进行配置修改。
 
 ```bash   
-    tar -xvf  wedatasphere-linkis-x.x.x-dist.tar.gz
+    tar -xvf  wedatasphere-linkis-x.x.x-combined-package-dist.tar.gz
 ```
       
 ### d. 不依赖HDFS的基础配置修改
 
 ```bash
-    vi conf/linkis-env.sh
+    vi config/linkis-env.sh
 ```
         
 ```properties
@@ -135,9 +135,8 @@ Linkis1.0 默认已适配的引擎列表如下：
     LINKIS_INSTALL_HOME=/appcom/Install/Linkis    # 指定安装目录
     WORKSPACE_USER_ROOT_PATH=file:///tmp/hadoop    # 指定用户根目录，一般用于存储用户的脚本文件和日志文件等，是用户的工作空间。
     RESULT_SET_ROOT_PATH=file:///tmp/linkis   # 结果集文件路径，用于存储Job的结果集文件
-	ENGINECONN_ROOT_PATH=/appcom/tmp #存放ECP的安装路径，需要部署用户有写权限的本地目录
+    ENGINECONN_ROOT_PATH=/appcom/tmp #存放ECP的安装路径，需要部署用户有写权限的本地目录
     ENTRANCE_CONFIG_LOG_PATH=file:///tmp/linkis/  #ENTRANCE的日志路径
-
     ## LDAP配置，默认Linkis只支持部署用户登录，如果需要支持多用户登录可以使用LDAP，需要配置以下参数：
     #LDAP_URL=ldap://localhost:1389/ 
     #LDAP_BASEDN=dc=webank,dc=com
@@ -145,7 +144,7 @@ Linkis1.0 默认已适配的引擎列表如下：
 ### e. 依赖HDFS/Hive/Spark的基础配置修改
 
 ```bash
-     vi conf/linkis-env.sh
+     vi config/linkis-env.sh
 ```
         
 ```properties
@@ -153,11 +152,11 @@ Linkis1.0 默认已适配的引擎列表如下：
     deployUser=hadoop      #指定部署用户
     WORKSPACE_USER_ROOT_PATH=file:///tmp/hadoop    # 指定用户根目录，一般用于存储用户的脚本文件和日志文件等，是用户的工作空间。
     RESULT_SET_ROOT_PATH=hdfs:///tmp/linkis   # 结果集文件路径，用于存储Job的结果集文件
-	ENGINECONN_ROOT_PATH=/appcom/tmp #存放ECP的安装路径，需要部署用户有写权限的本地目录
+    ENGINECONN_ROOT_PATH=/appcom/tmp #存放ECP的安装路径，需要部署用户有写权限的本地目录
     ENTRANCE_CONFIG_LOG_PATH=hdfs:///tmp/linkis/  #ENTRANCE的日志路径
 
     #因为1.0支持多Yarn集群，使用到Yarn队列资源的一定需要配置YARN_RESTFUL_URL
- 	YARN_RESTFUL_URL=http://127.0.0.1:8088  #Yarn的ResourceManager的地址
+    YARN_RESTFUL_URL=http://127.0.0.1:8088  #Yarn的ResourceManager的地址
 
     # 如果您想配合Scriptis一起使用，CDH版的Hive，还需要配置如下参数（社区版Hive可忽略该配置）
     HIVE_META_URL=jdbc://...   # HiveMeta元数据库的URL
@@ -183,7 +182,7 @@ Linkis1.0 默认已适配的引擎列表如下：
 ### f. 修改数据库配置 
 
 ```bash   
-    vi conf/db.sh 
+    vi config/db.sh 
 ```
             
 ```properties    
