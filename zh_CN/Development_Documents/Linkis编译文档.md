@@ -117,6 +117,25 @@
     </properties>
 ```
 
+**请注意：如果你的hadoop版本是hadoop3，需要修改linkis-hadoop-common的pom文件**
+因为在hadoop2.8以下的时候，hdfs相关的class是在hadoop-hdfs模块中的，但是在hadoop 3.X中将对应的class移动到了模块hadoop-hdfs-client当中，您需要修改下这个文件：
+
+```
+pom:Linkis/linkis-commons/linkis-hadoop-common/pom.xml
+修改依赖hadoop-hdfs为hadoop-hdfs-client：
+ <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs</artifactId>  <!-- 只需要将该行替换即可，替换为 <artifactId>hadoop-hdfs-client</artifactId>-->
+            <version>${hadoop.version}</version>
+            ...
+ 将hadoop-hdfs修改为：
+  <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-hdfs-client</artifactId>
+            <version>${hadoop.version}</version>
+            ...
+```
+
 #### 如何修改 Linkis 依赖的 Spark、Hive 版本？
 
 这里以修改 Spark 的版本为例进行介绍。进入 Spark 引擎所在的目录，手动修改 pom.xml 文件的 Spark 版本信息，具体如下：
