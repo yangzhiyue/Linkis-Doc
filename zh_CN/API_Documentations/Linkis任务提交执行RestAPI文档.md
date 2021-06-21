@@ -156,7 +156,7 @@
 
 - 接口 `/api/rest_j/v1/entrance/${execID}/kill`
 
-- 提交方式 `POST`
+- 提交方式 `GET`
 
 - 返回示例，其中返回的fromLine需要下次日志请求的参数
 
