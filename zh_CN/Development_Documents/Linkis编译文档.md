@@ -10,6 +10,8 @@
 
 - [4. 如何修改Linkis的依赖的Hadoop、Hive、Spark版本](#4-如何修改linkis的依赖的hadoophivespark版本)
 
+- [5. 编译前端管理台](https://github.com/WeBankFinTech/Linkis-Doc/blob/master/zh_CN/Development_Documents/Web/Build.md)
+
 ## 1.全量编译 Linkis
 
    __编译环境要求：__  必须 **JDK8** 以上，**Oracle/Sun** 和 **OpenJDK**都支持。
