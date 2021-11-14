@@ -28,11 +28,11 @@ echo ${FLINK_HOME}
 
 ### 2.1 Flink版本的选择和编译
 
-Linkis1.0.2支持的Flink版本是Flink1.12.2,理论上Linkis1.x可以支持各个版本的Flink,但是Flink各个版本之前的API变化太大,可能需要您按照API的变化修改Linkis中flink引擎的代码并重新编译。
+Linkis1.0.2及以上支持的Flink版本是Flink1.12.2,理论上Linkis1.0.2+可以支持各个版本的Flink,但是Flink各个版本之前的API变化太大,可能需要您按照API的变化修改Linkis中flink引擎的代码并重新编译。
 
 ### 2.2 Flink engineConn部署和加载
 
-Linkis Flink引擎默认在Linkis1.0.2不会安装，需要您手动进行编译并进行安装。
+Linkis Flink引擎默认在Linkis1.0.2+不会安装，需要您手动进行编译并进行安装。
 
 ```
 单独编译flink的方式
